@@ -23,7 +23,7 @@ module.exports = function(source, sourcemap) {
   var templateProperty = 'template';
 
   if (this.options != null) {
-    Object.assign(config, this.options['angular2TemplateLoader']);
+    Object.assign(config, this.options['angularTemplateLoader']);
   }
 
   Object.assign(config, query);

@@ -1,5 +1,5 @@
-# angular2-template-loader
-Chain-to loader for webpack that inlines all html and style's in angular2 components.
+# angular-template-loader
+Chain-to loader for webpack that inlines all html and style's in angular components.
 
 [![Build Status](https://travis-ci.org/TheLarkInn/angular2-template-loader.svg?branch=master)](https://travis-ci.org/TheLarkInn/angular2-template-loader)
 [![Coverage](https://codecov.io/gh/TheLarkInn/angular2-template-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/TheLarkInn/angular2-template-loader)
@@ -16,10 +16,10 @@ Chain-to loader for webpack that inlines all html and style's in angular2 compon
 Install the webpack loader from [npm](https://www.npmjs.com/package/angular2-template-loader).
 - `npm install angular2-template-loader --save-dev`
 
-Chain the `angular2-template-loader` to your currently used typescript loader.
+Chain the `angular-template-loader` to your currently used typescript loader.
 
 ```js
-loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+loaders: ['awesome-typescript-loader', 'angular-template-loader'],
 ```
 
 ### Requirements
@@ -31,14 +31,14 @@ This loader allows you to decouple templates from the component file and maintai
 ### Example Usage
 
 #### Webpack
-Here is an example markup of the `webpack.config.js`, which chains the `angular2-template-loader` to the `tsloader`
+Here is an example markup of the `webpack.config.js`, which chains the `angular-template-loader` to the `tsloader`
 
 ```js
 module: {
   loaders: [
     {
       test: /\.ts$/,
-      loaders: ['awesome-typescript-loader', 'angular2-template-loader?keepUrl=true'],
+      loaders: ['awesome-typescript-loader', 'angular-template-loader?keepUrl=true'],
       exclude: [/\.(spec|e2e)\.ts$/]
     },
     /* Embed files. */
@@ -67,7 +67,7 @@ export class AwesomeButtonComponent { }
 ```
 
 ### How does it work
-The `angular2-template-loader` searches for `templateUrl` and `styleUrls` declarations inside of the Angular 2 Component metadata and replaces the paths with the corresponding `require` statement.
+The `angular-template-loader` searches for `templateUrl` and `styleUrls` declarations inside of the Angular 2 Component metadata and replaces the paths with the corresponding `require` statement.
 If `keepUrl=true` is added to the loader's query string, `templateUrl` and `styleUrls` will not be replaced by `template` and `style` respectively so you can use a loader like `file-loader`.
 
 The generated `require` statements will be handled by the given loader for `.html` and `.js` files.

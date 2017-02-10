@@ -6,7 +6,7 @@ var fixtures = require("./fixtures");
 describe("loader", function() {
   it("Should convert html and style file strings to require()s", function(){
 
-    loader.call({}, fixtures.simpleAngular2TestComponentFileStringSimple)
+    loader.call({}, fixtures.simpleAngularTestComponentFileStringSimple)
       .should
       .be
       .eql(`
@@ -138,7 +138,7 @@ describe("loader", function() {
     var self = {};
 
     self.options = {
-      angular2TemplateLoader: {
+      angularTemplateLoader: {
         keepUrl: true
       }
     };
